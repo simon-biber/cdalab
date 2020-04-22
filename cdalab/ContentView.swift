@@ -11,14 +11,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Text("Hello, World!")
-            Button("Try it", action: {
-                do {
-                    try test()
-                }
-                catch {
-                    print(error)
-                }
+            Text("CDA Lab")
+            Text("")
+            Button("Try storing a CDA document", action: {
+                    tryStoringCDA()
             })
         }
     }

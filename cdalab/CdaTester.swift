@@ -14,7 +14,7 @@ let data = Data(base64Encoded: "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi
 let start = Date(timeIntervalSinceNow: -120)
 let end = Date(timeIntervalSinceNow: 0)
 
-func test() throws
+func tryStoringCDA()
 {
     let store = HKHealthStore()
     let types = Set<HKSampleType>([HKObjectType.documentType(forIdentifier: .CDA)!])
@@ -28,7 +28,7 @@ func test() throws
     print("waiting for auth")
 }
 
-func save(store:HKHealthStore)
+func save(store: HKHealthStore)
 {
     do {
         let s = try HKCDADocumentSample(data: data!, start: start, end: end, metadata: nil)
